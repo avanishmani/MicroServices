@@ -11,4 +11,6 @@ public interface HotelService {
 	List<Hotel> getAllHotel();
 
 	Hotel getHotel(Integer id) throws HotelException;
+	
+	
 }
