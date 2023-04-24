@@ -27,7 +27,7 @@ public class UserController {
 	}
 
 	@GetMapping("/user/{user}")
-	public ResponseEntity<Users> getUser(@PathVariable("user") String userID) throws UserException{
+	public ResponseEntity<Users> getUser(@PathVariable("user") Integer userID) throws UserException{
 		Users u1=usp.getUser(userID);
 		return new ResponseEntity<Users>(u1, HttpStatus.ACCEPTED);
 	}
@@ -35,5 +35,9 @@ public class UserController {
 	public ResponseEntity<List<Users>> getUsers() {
 		
 		return new ResponseEntity<List<Users>>(usp.getAllUser(), HttpStatus.ACCEPTED);
+	}
+	@GetMapping("/hello")
+	public String sayHello() {
+		return "Welcome Users";
 	}
 }

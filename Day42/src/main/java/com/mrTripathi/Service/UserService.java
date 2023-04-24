@@ -10,5 +10,5 @@ public interface UserService {
 
 	public List<Users> getAllUser();
 
-	public Users getUser(String UserId) throws UserException;
+	public Users getUser(Integer UserId) throws UserException;
 }

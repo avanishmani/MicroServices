@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Users getUser(String UserId) throws UserException {
+	public Users getUser(Integer UserId) throws UserException {
 		// TODO Auto-generated method stub
 		return ur.findById(UserId).orElseThrow(() -> new UserException("No Such User Exist with UserID :- " + UserId));
 	}
