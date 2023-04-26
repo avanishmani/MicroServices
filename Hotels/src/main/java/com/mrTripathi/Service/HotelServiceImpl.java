@@ -17,7 +17,7 @@ public class HotelServiceImpl implements HotelService {
 	@Override
 	public Hotel addHotel(Hotel hotel) {
 		// TODO Auto-generated method stub
-		
+		System.out.println(hotel+"******");
 		return hr.save(hotel);
 	}
 
