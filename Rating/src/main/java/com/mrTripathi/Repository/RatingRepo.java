@@ -9,7 +9,7 @@ import com.mrTripathi.model.Rating;
 
 @Repository
 public interface RatingRepo extends JpaRepository<Rating, Integer> {
-	List<Rating> findByUserID(Integer UID);
+//	List<Rating> findByUserID(Integer UID);
 
-	List<Rating> findByHotelID(Integer HID);
+//	List<Rating> findByHotelID(Integer HID);
 }
