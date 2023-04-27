@@ -11,8 +11,8 @@ public class Rating {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer RatingID;
-	private Integer UserID;
-	private Integer HotelID;
+	private Integer userID;
+	private Integer hotelID;
 	private Integer Rating;
 	private String Feedback;
 }

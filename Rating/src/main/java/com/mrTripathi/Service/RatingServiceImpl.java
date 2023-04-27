@@ -26,18 +26,24 @@ public class RatingServiceImpl implements RatingService {
 		else return lr;
 	}
 
-//	@Override
-//	public List<Rating> getRatingByUserID(Integer UID) throws RatingException {
-//		List<Rating> lr=rr.findByUserID(UID);
-//		if(lr.size()==0)throw new RatingException("No Any Rating is Avilable with UserID"+ UID);
-//		else return lr;
-//	}
-//
-//	@Override
-//	public List<Rating> getRatingByHotelID(Integer HID) throws RatingException {
-//		List<Rating> lr=rr.findByHotelID(HID);
-//		if(lr.size()==0)throw new RatingException("No Any Rating is Avilable with UserID"+ HID);
-//		else return lr;
-//	}
+	@Override
+	public List<Rating> getRatingByUserID(Integer UID) throws RatingException {
+		List<Rating> lr = rr.findByUserID(UID);
+	    if (lr.size() == 0) {
+	        throw new RatingException("No Any Rating is Available with UserID" + UID);
+	    } else {
+	        return lr;
+	    }
+	}
+
+	@Override
+	public List<Rating> getRatingByHotelID(Integer HID) throws RatingException {
+		List<Rating> lr = rr.findByHotelID(HID);
+	    if (lr.size() == 0) {
+	        throw new RatingException("No Any Rating is Available with HotelID" + HID);
+	    } else {
+	        return lr;
+	    }
+	}
 
 }
