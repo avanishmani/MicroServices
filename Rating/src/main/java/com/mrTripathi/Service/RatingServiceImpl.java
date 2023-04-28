@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.mrTripathi.Exception.RatingException;
 import com.mrTripathi.Repository.RatingRepo;
 import com.mrTripathi.model.Rating;
+
 @Service
 public class RatingServiceImpl implements RatingService {
 	@Autowired
@@ -21,29 +22,25 @@ public class RatingServiceImpl implements RatingService {
 
 	@Override
 	public List<Rating> getRating() throws RatingException {
-		List<Rating> lr=rr.findAll();
-		if(lr.size()==0)throw new RatingException("No Any Rating is Avilable");
-		else return lr;
+		List<Rating> lr = rr.findAll();
+
+		return lr;
 	}
 
 	@Override
-	public List<Rating> getRatingByUserID(Integer UID) throws RatingException {
-		List<Rating> lr = rr.findByUserID(UID);
-	    if (lr.size() == 0) {
-	        throw new RatingException("No Any Rating is Available with UserID" + UID);
-	    } else {
-	        return lr;
-	    }
+	public List<Rating> getRatingByUserID(Integer UID) {
+		List<Rating> lr = rr.getAll(UID);
+
+		return lr;
+
 	}
 
 	@Override
-	public List<Rating> getRatingByHotelID(Integer HID) throws RatingException {
-		List<Rating> lr = rr.findByHotelID(HID);
-	    if (lr.size() == 0) {
-	        throw new RatingException("No Any Rating is Available with HotelID" + HID);
-	    } else {
-	        return lr;
-	    }
+	public List<Rating> getRatingByHotelID(Integer HID) {
+		List<Rating> lr = rr.getAllRating(HID);
+
+		return lr;
+
 	}
 
 }

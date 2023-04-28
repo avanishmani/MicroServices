@@ -10,7 +10,7 @@ public interface RatingService {
 
 	List<Rating> getRating() throws RatingException;
 
-	List<Rating> getRatingByUserID(Integer UID) throws RatingException;
+	List<Rating> getRatingByUserID(Integer UID) ;
 
-	List<Rating> getRatingByHotelID(Integer HID) throws RatingException;
+	List<Rating> getRatingByHotelID(Integer HID) ;
 }

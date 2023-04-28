@@ -11,9 +11,13 @@ import com.mrTripathi.model.Rating;
 
 @Repository
 public interface RatingRepo extends JpaRepository<Rating, Integer> {
-	@Query("SELECT r FROM Rating r WHERE r.userID = :userID")
-    List<Rating> findByUserID(@Param("userlID") Integer userID);
-
-	 @Query("SELECT r FROM Rating r WHERE r.hotelID = :hotelID")
-	    List<Rating> findByHotelID(@Param("hotelID") Integer hotelID);
+//	@Query("SELECT r FROM Rating r WHERE r.userID = :userID")
+//    List<Rating> findByUserID(@Param("userlID") Integer userID);
+//
+//	 @Query("SELECT r FROM Rating r WHERE r.hotelID = :hotelID")
+//	    List<Rating> findByHotelID(@Param("hotelID") Integer hotelID);
+	@Query("FROM Rating r WHERE r.userID = ?1")
+	List<Rating> getAll(Integer uid);
+	@Query("FROM Rating r WHERE r.hotelID = ?1")
+	List<Rating> getAllRating(Integer hid);
 }
