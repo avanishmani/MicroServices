@@ -1,5 +1,9 @@
 package com.mrTripathi.model;
 
+import java.util.List;
+
+import org.springframework.data.annotation.Transient;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,16 +14,18 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="micro_user")
+@Table(name = "micro_user")
 public class Users {
 	@Id
-	@Column(name="ID")
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer UserId;
-	@Column(name="NAME")
+	private Integer UserId;
+	@Column(name = "NAME")
 	private String name;
-	@Column(name="EMAIL")
+	@Column(name = "EMAIL")
 	private String email;
-	@Column(name="ABOUT")
+	@Column(name = "ABOUT")
 	private String about;
+	@jakarta.persistence.Transient
+	private List<Rating> rating;
 }
