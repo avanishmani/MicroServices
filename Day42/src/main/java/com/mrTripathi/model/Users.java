@@ -2,7 +2,7 @@ package com.mrTripathi.model;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Transient;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,8 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Data;
-
 @Entity
 @Data
 @Table(name = "micro_user")
@@ -26,6 +26,6 @@ public class Users {
 	private String email;
 	@Column(name = "ABOUT")
 	private String about;
-	@jakarta.persistence.Transient
+	@Transient
 	private List<Rating> rating;
 }
